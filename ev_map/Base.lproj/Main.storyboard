@@ -175,6 +175,21 @@
             </objects>
             <point key="canvasLocation" x="116" y="759"/>
         </scene>
+        <!--Direction Map View Controller-->
+        <scene sceneID="TJ7-IK-1Lf">
+            <objects>
+                <viewController storyboardIdentifier="DirectionMapViewController" id="Ub7-gx-Dva" userLabel="Direction Map View Controller" customClass="DirectionMapViewController" customModule="ev_map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0fV-zI-O9K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WKj-l4-iAb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZK-WS-6kO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847.20000000000005" y="757.87106446776613"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -9,6 +9,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 
+var GMS_PATH: GMSMutablePath? = nil
 
 class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
     
@@ -89,13 +90,12 @@ class DirectionSearchViewController: UIViewController,UITextFieldDelegate {
     }
     
     func drawPath(_ directionPath: DirectionPath) {
-        let path = GMSMutablePath()
+        GMS_PATH = GMSMutablePath()
         for lnglat in directionPath.list! {
-            path.add(CLLocationCoordinate2D(latitude: lnglat[1], longitude: lnglat[0]))
+            GMS_PATH!.add(CLLocationCoordinate2D(latitude: lnglat[1], longitude: lnglat[0]))
         }
-        let direction = GMSPolyline(path: path)
-        direction.strokeWidth = 10.0 // 선 굵기
-        //direction.map = mapView
+        guard let dmvc = self.storyboard?.instantiateViewController(identifier: "DirectionMapViewController") as? DirectionMapViewController else { return }
+        self.navigationController?.pushViewController(dmvc, animated: true)
     }
     
 }
