@@ -68,6 +68,113 @@
             </objects>
             <point key="canvasLocation" x="114.40000000000001" y="71.514242878560722"/>
         </scene>
+        <!--Direction Search View Controller-->
+        <scene sceneID="Udn-NC-6FA">
+            <objects>
+                <viewController storyboardIdentifier="DirectionSearchViewController" id="dLK-OU-afe" customClass="DirectionSearchViewController" customModule="ev_map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EOt-II-yAe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경로 탐색" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-0c-iDu">
+                                <rect key="frame" x="65" y="37" width="245" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="위치 검색" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6E-ej-q9v">
+                                <rect key="frame" x="7.5" y="268" width="360" height="40"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="LFW-8b-tkj"/>
+                                    <constraint firstAttribute="height" constant="40" id="NaZ-bm-QAD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFc-a7-rFw" userLabel="Location Search Button">
+                                <rect key="frame" x="7.5" y="268" width="360" height="40"/>
+                                <connections>
+                                    <action selector="searchBarTappedHandler:" destination="dLK-OU-afe" eventType="touchUpInside" id="NND-5b-WfT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="출발지" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXi-zP-bbE">
+                                <rect key="frame" x="7.5" y="362" width="360" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzY-dL-zHh" userLabel="Source Button">
+                                <rect key="frame" x="7.5" y="362" width="360" height="40"/>
+                                <connections>
+                                    <action selector="searchBarTappedHandler:" destination="dLK-OU-afe" eventType="touchUpInside" id="Oeo-Xe-etL"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="도착지" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Wg-lT-O0A">
+                                <rect key="frame" x="7.5" y="428" width="360" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXr-Pa-DjP" userLabel="Destination Button">
+                                <rect key="frame" x="7.5" y="428" width="360" height="40"/>
+                                <connections>
+                                    <action selector="searchBarTappedHandler:" destination="dLK-OU-afe" eventType="touchUpInside" id="ATt-ks-QZ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poF-hM-ixN">
+                                <rect key="frame" x="138" y="528" width="99" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="경로 검색"/>
+                                <connections>
+                                    <action selector="searchDirectionHandler:" destination="dLK-OU-afe" eventType="touchUpInside" id="lL4-nS-Mjn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PjP-Bz-PAj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xXr-Pa-DjP" firstAttribute="width" secondItem="8Wg-lT-O0A" secondAttribute="width" id="3cg-dd-5cX"/>
+                            <constraint firstItem="poF-hM-ixN" firstAttribute="top" secondItem="8Wg-lT-O0A" secondAttribute="bottom" constant="60" id="4W0-Hv-R42"/>
+                            <constraint firstItem="8Wg-lT-O0A" firstAttribute="height" secondItem="c6E-ej-q9v" secondAttribute="height" id="4zQ-aC-1mR"/>
+                            <constraint firstItem="c6E-ej-q9v" firstAttribute="top" secondItem="EOt-II-yAe" secondAttribute="top" constant="268" id="5K6-UI-nkI"/>
+                            <constraint firstItem="kqO-0c-iDu" firstAttribute="leading" secondItem="PjP-Bz-PAj" secondAttribute="leading" constant="65" id="7Qe-6q-VWc"/>
+                            <constraint firstItem="nXi-zP-bbE" firstAttribute="height" secondItem="c6E-ej-q9v" secondAttribute="height" id="98f-No-GjL"/>
+                            <constraint firstItem="kqO-0c-iDu" firstAttribute="top" secondItem="PjP-Bz-PAj" secondAttribute="top" constant="37" id="9qJ-Yc-Bqb"/>
+                            <constraint firstItem="c6E-ej-q9v" firstAttribute="centerX" secondItem="kqO-0c-iDu" secondAttribute="centerX" id="A1O-nf-dSr"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="leading" secondItem="8Wg-lT-O0A" secondAttribute="leading" id="CBJ-gT-iwo"/>
+                            <constraint firstItem="xXr-Pa-DjP" firstAttribute="top" secondItem="8Wg-lT-O0A" secondAttribute="top" id="DVf-mQ-Sis"/>
+                            <constraint firstItem="nXi-zP-bbE" firstAttribute="width" secondItem="c6E-ej-q9v" secondAttribute="width" id="EYG-2h-vfh"/>
+                            <constraint firstItem="xXr-Pa-DjP" firstAttribute="leading" secondItem="8Wg-lT-O0A" secondAttribute="leading" id="LjV-AU-buH"/>
+                            <constraint firstItem="8Wg-lT-O0A" firstAttribute="width" secondItem="c6E-ej-q9v" secondAttribute="width" id="MXU-qw-bDX"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="top" secondItem="c6E-ej-q9v" secondAttribute="bottom" constant="54" id="NAi-n5-Dhl"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="width" secondItem="nXi-zP-bbE" secondAttribute="width" id="NDt-xv-KY9"/>
+                            <constraint firstItem="poF-hM-ixN" firstAttribute="centerX" secondItem="xXr-Pa-DjP" secondAttribute="centerX" id="OYX-Hw-tCf"/>
+                            <constraint firstItem="c6E-ej-q9v" firstAttribute="top" secondItem="qFc-a7-rFw" secondAttribute="top" id="QMv-NQ-K3y"/>
+                            <constraint firstItem="nXi-zP-bbE" firstAttribute="leading" secondItem="qFc-a7-rFw" secondAttribute="leading" id="SnZ-aD-Wqw"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="leading" secondItem="nXi-zP-bbE" secondAttribute="leading" id="Tay-Qq-Kch"/>
+                            <constraint firstItem="xXr-Pa-DjP" firstAttribute="top" secondItem="EzY-dL-zHh" secondAttribute="bottom" constant="26" id="UaU-Td-Qdx"/>
+                            <constraint firstItem="xXr-Pa-DjP" firstAttribute="height" secondItem="8Wg-lT-O0A" secondAttribute="height" id="VSF-sv-guF"/>
+                            <constraint firstItem="qFc-a7-rFw" firstAttribute="width" secondItem="c6E-ej-q9v" secondAttribute="width" id="VYk-Y7-YvK"/>
+                            <constraint firstItem="c6E-ej-q9v" firstAttribute="centerX" secondItem="EOt-II-yAe" secondAttribute="centerX" id="Yea-tb-FCy"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="height" secondItem="nXi-zP-bbE" secondAttribute="height" id="h96-rd-045"/>
+                            <constraint firstItem="c6E-ej-q9v" firstAttribute="leading" secondItem="qFc-a7-rFw" secondAttribute="leading" id="ndW-HQ-1Qh"/>
+                            <constraint firstItem="EzY-dL-zHh" firstAttribute="top" secondItem="nXi-zP-bbE" secondAttribute="top" id="qbi-YW-6Ws"/>
+                            <constraint firstItem="poF-hM-ixN" firstAttribute="leading" secondItem="PjP-Bz-PAj" secondAttribute="leading" constant="138" id="r4d-D5-U51"/>
+                            <constraint firstItem="qFc-a7-rFw" firstAttribute="height" secondItem="c6E-ej-q9v" secondAttribute="height" id="vup-Ja-mym"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dstSearchBar" destination="8Wg-lT-O0A" id="Ank-jm-TRb"/>
+                        <outlet property="locationSearchBar" destination="c6E-ej-q9v" id="1Wf-xf-w2x"/>
+                        <outlet property="srcSearchBar" destination="nXi-zP-bbE" id="WJM-qV-pRC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mss-45-u4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="759"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
