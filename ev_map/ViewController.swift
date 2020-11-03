@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func directionTapped(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(identifier: "DirectionSearchViewController")
-       self.navigationController?.pushViewController(controller!, animated: true)
+        guard let controller = self.storyboard?.instantiateViewController(identifier: "DirectionSearchViewController") else { return }
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     override func viewDidLoad() {
